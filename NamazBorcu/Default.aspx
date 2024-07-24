@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <asp:Calendar ID="ThisMonth" runat="server" OnDayRender="ThisMonth_DayRender" OnSelectionChanged="ThisMonth_SelectionChanged"></asp:Calendar>
+        <asp:Panel style="display: inline-block;" ID="CalendarPanel" runat="server" Direction="LeftToRight" HorizontalAlign="Center" ScrollBars="Auto" Wrap="True" Width="100%" Height="100%"></asp:Panel>
     </main>
 
 </asp:Content>
