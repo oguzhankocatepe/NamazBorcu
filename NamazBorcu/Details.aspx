@@ -15,19 +15,19 @@
                 </asp:TableHeaderRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:CheckBox ID="SabahSünnet" Text="Sünnet" runat="server" />
+                        <asp:CheckBox ID="SABAHSUNNET" Text="Sünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="ÖğleSünnet" Text="Sünnet" runat="server" />
+                        <asp:CheckBox ID="OGLESUNNET" Text="Sünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="İkindiSünnet" Text="Sünnet" runat="server" />
+                        <asp:CheckBox ID="IKINDISUNNET" Text="Sünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
                         <!-- <asp:CheckBox ID="CheckBox4" Text="Sünnet" runat="server" /> -->
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="YatsıSünnet" Text="Sünnet" runat="server" />
+                        <asp:CheckBox ID="YATSISUNNET" Text="Sünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center">
                         <asp:Label ID="SünnetToplam" runat="server" Text="0"></asp:Label>
@@ -35,19 +35,19 @@
                 </asp:TableRow>                
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:CheckBox ID="SabahFarz" Text="Farz" runat="server" />
+                        <asp:CheckBox ID="SABAHFARZ" Text="Farz" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="ÖğleFarz" Text="Farz" runat="server" />
+                        <asp:CheckBox ID="OGLEFARZ" Text="Farz" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="İkindiFarz" Text="Farz" runat="server" />
+                        <asp:CheckBox ID="IKINDIFARZ" Text="Farz" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="AkşamFarz" Text="Farz" runat="server" />
+                        <asp:CheckBox ID="AKSAMFARZ" Text="Farz" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="YatsıFarz" Text="Farz" runat="server" />
+                        <asp:CheckBox ID="YATSIFARZ" Text="Farz" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center">
                         <asp:Label ID="FarzToplam" runat="server" Text="0"></asp:Label>
@@ -58,16 +58,16 @@
                         <!-- <asp:CheckBox ID="CheckBox11" Text="SonSünnet" runat="server" /> -->
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="ÖğleSonSünnet" Text="SonSünnet" runat="server" />
+                        <asp:CheckBox ID="OGLESONSUNNET" Text="SonSünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
                         <!-- <asp:CheckBox ID="CheckBox13" Text="SonSünnet" runat="server" />-->
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="AkşamSonSünnet" Text="SonSünnet" runat="server" />
+                        <asp:CheckBox ID="AKSAMSONSUNNET" Text="SonSünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="YatsıSonSünnet" Text="SonSünnet" runat="server" />
+                        <asp:CheckBox ID="YATSISONSUNNET" Text="SonSünnet" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center">
                         <asp:Label ID="SonSünnetToplam" runat="server" Text="0"></asp:Label>
@@ -87,7 +87,7 @@
                         <!-- <asp:CheckBox ID="CheckBox19" Text="SonSünnet" runat="server" />-->
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="Vitr" Text="Vitr" runat="server" />
+                        <asp:CheckBox ID="VITR" Text="Vitr" OnCheckedChanged="Namaz_CheckedChanged" EnableViewState="true" AutoPostBack="true" runat="server" />
                     </asp:TableCell>
                     <asp:TableCell HorizontalAlign="Center">
                         <asp:Label ID="VitrToplam"  runat="server" Text="0"></asp:Label>

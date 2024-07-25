@@ -33,31 +33,31 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.Table NamazTable;
 
         /// <summary>
-        /// SabahSünnet control.
+        /// SABAHSUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SabahSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox SABAHSUNNET;
 
         /// <summary>
-        /// ÖğleSünnet control.
+        /// OGLESUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ÖğleSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox OGLESUNNET;
 
         /// <summary>
-        /// İkindiSünnet control.
+        /// IKINDISUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox İkindiSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox IKINDISUNNET;
 
         /// <summary>
         /// CheckBox4 control.
@@ -69,13 +69,13 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
 
         /// <summary>
-        /// YatsıSünnet control.
+        /// YATSISUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox YatsıSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox YATSISUNNET;
 
         /// <summary>
         /// SünnetToplam control.
@@ -87,49 +87,49 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.Label SünnetToplam;
 
         /// <summary>
-        /// SabahFarz control.
+        /// SABAHFARZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SabahFarz;
+        protected global::System.Web.UI.WebControls.CheckBox SABAHFARZ;
 
         /// <summary>
-        /// ÖğleFarz control.
+        /// OGLEFARZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ÖğleFarz;
+        protected global::System.Web.UI.WebControls.CheckBox OGLEFARZ;
 
         /// <summary>
-        /// İkindiFarz control.
+        /// IKINDIFARZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox İkindiFarz;
+        protected global::System.Web.UI.WebControls.CheckBox IKINDIFARZ;
 
         /// <summary>
-        /// AkşamFarz control.
+        /// AKSAMFARZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox AkşamFarz;
+        protected global::System.Web.UI.WebControls.CheckBox AKSAMFARZ;
 
         /// <summary>
-        /// YatsıFarz control.
+        /// YATSIFARZ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox YatsıFarz;
+        protected global::System.Web.UI.WebControls.CheckBox YATSIFARZ;
 
         /// <summary>
         /// FarzToplam control.
@@ -150,13 +150,13 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.CheckBox CheckBox11;
 
         /// <summary>
-        /// ÖğleSonSünnet control.
+        /// OGLESONSUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ÖğleSonSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox OGLESONSUNNET;
 
         /// <summary>
         /// CheckBox13 control.
@@ -168,22 +168,22 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.CheckBox CheckBox13;
 
         /// <summary>
-        /// AkşamSonSünnet control.
+        /// AKSAMSONSUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox AkşamSonSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox AKSAMSONSUNNET;
 
         /// <summary>
-        /// YatsıSonSünnet control.
+        /// YATSISONSUNNET control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox YatsıSonSünnet;
+        protected global::System.Web.UI.WebControls.CheckBox YATSISONSUNNET;
 
         /// <summary>
         /// SonSünnetToplam control.
@@ -231,13 +231,13 @@ namespace NamazBorcu
         protected global::System.Web.UI.WebControls.CheckBox CheckBox19;
 
         /// <summary>
-        /// Vitr control.
+        /// VITR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Vitr;
+        protected global::System.Web.UI.WebControls.CheckBox VITR;
 
         /// <summary>
         /// VitrToplam control.
