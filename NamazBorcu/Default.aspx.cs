@@ -14,28 +14,56 @@ namespace NamazBorcu
 {
     public partial class _Default : Page
     {
+        ListBox listBox = new ListBox();
         protected void Page_Load(object sender, EventArgs e)
         {
+            var years = NamazService.Namazlar.Select(year => new {
+                Value = Int32.Parse(year.Tarih.Substring(0, 4)) - DateTime.Today.Year,
+                Year = year.Tarih.Substring(0, 4)
+            }).Distinct().OrderByDescending(x => x.Year).ToList();
+            listBox.DataSource = years;
+            listBox.DataTextField = "Year";
+            listBox.DataValueField = "Value";
+            listBox.DataBind();
+            listBox.AutoPostBack = true;
+            listBox.EnableViewState = false;
+            listBox.SelectedIndexChanged += ListBox_SelectedIndexChanged;
+            CalendarPanel.Controls.Add(listBox);
+            if (!Page.IsPostBack)
+            {
+                listBox.SelectedIndex = 0;
+                ListBox_SelectedIndexChanged(listBox, null);
+            }
+        }
+
+        private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            const int MONTHCOUNT = 12;
             Table table = new Table();
             TableRow row = new TableRow();
             table.Rows.Add(row);
             CalendarPanel.Controls.Add(table);
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= MONTHCOUNT; i++)
             {
                 Calendar calendar = new Calendar();
                 calendar.DayRender += Calendar_DayRender;
                 calendar.SelectionChanged += Calendar_SelectionChanged;
                 calendar.TodaysDate = DateTime.Today.AddMonths(-DateTime.Today.Month + i);
+                calendar.TodaysDate = calendar.TodaysDate.AddYears(Int32.Parse(listBox.SelectedItem.Value));
                 TableCell cell = new TableCell();
                 cell.Controls.Add(calendar);
-                if (i == 7)
+                if (i == MONTHCOUNT / 2 + 1)
                 {
                     row = new TableRow();
                     table.Rows.Add(row);
                 }
                 row.Cells.Add(cell);
             }
-
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanFarz : " + (NamazService.Namazlar.Sum(x => x.FarzToplam) + NamazService.Namazlar.Sum(x => x.VitrToplam))));
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanSünnet : " + (NamazService.Namazlar.Sum(x => x.SünnetToplam) + NamazService.Namazlar.Sum(x => x.SonSünnetToplam))));
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanToplam : " + NamazService.Namazlar.Sum(x => x.GenelToplam)));
+            CalendarPanel.Controls.Add(new LiteralControl("Kılınması Gereken : " + NamazService.Namazlar.Count * NamazService.NAMAZFULL));
+            CalendarPanel.Controls.Add(new LiteralControl("Namaz Borcu : " + (NamazService.Namazlar.Count * NamazService.NAMAZFULL - NamazService.Namazlar.Sum(x => x.GenelToplam))));
         }
 
         private void Calendar_SelectionChanged(object sender, EventArgs e)
