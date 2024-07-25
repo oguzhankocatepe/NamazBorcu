@@ -49,7 +49,7 @@ namespace NamazBorcu
                 calendar.SelectionChanged += Calendar_SelectionChanged;
                 calendar.TodaysDate = DateTime.Today.AddMonths(-DateTime.Today.Month + i);
                 calendar.TodaysDate = calendar.TodaysDate.AddYears(Int32.Parse(listBox.SelectedItem.Value));
-                calendar.ToolTip = calendar.TodaysDate.ToString("MMM", CultureInfo.InvariantCulture);
+                calendar.ToolTip = calendar.TodaysDate.ToString("MMM", CultureInfo.CreateSpecificCulture("tr"));
                 TableCell cell = new TableCell();
                 cell.Controls.Add(calendar);
                 if (i == new System.Globalization.GregorianCalendar().GetMonthsInYear(DateTime.Today.Year) / 2 + 1)
