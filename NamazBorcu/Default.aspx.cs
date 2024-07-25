@@ -38,21 +38,21 @@ namespace NamazBorcu
 
         private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            const int MONTHCOUNT = 12;
             Table table = new Table();
             TableRow row = new TableRow();
             table.Rows.Add(row);
             CalendarPanel.Controls.Add(table);
-            for (int i = 1; i <= MONTHCOUNT; i++)
+            for (int i = 1; i <= new System.Globalization.GregorianCalendar().GetMonthsInYear(DateTime.Today.Year); i++)
             {
                 Calendar calendar = new Calendar();
                 calendar.DayRender += Calendar_DayRender;
                 calendar.SelectionChanged += Calendar_SelectionChanged;
                 calendar.TodaysDate = DateTime.Today.AddMonths(-DateTime.Today.Month + i);
                 calendar.TodaysDate = calendar.TodaysDate.AddYears(Int32.Parse(listBox.SelectedItem.Value));
+                calendar.ToolTip = calendar.TodaysDate.ToString("MMM", CultureInfo.InvariantCulture);
                 TableCell cell = new TableCell();
                 cell.Controls.Add(calendar);
-                if (i == MONTHCOUNT / 2 + 1)
+                if (i == new System.Globalization.GregorianCalendar().GetMonthsInYear(DateTime.Today.Year) / 2 + 1)
                 {
                     row = new TableRow();
                     table.Rows.Add(row);
