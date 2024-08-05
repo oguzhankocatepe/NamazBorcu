@@ -11,8 +11,8 @@ namespace NamazBorcu.Service
     {
         public enum REKAT : int
         {
-            NAMAZYOK = 0, SABAHSUNNET = 2, SABAHFARZ = 2, OGLESUNNET = 4, OGLEFARZ = 4, OGLESONSUNNET = 2, IKINDISUNNET = 4,
-            IKINDIFARZ = 4, AKSAMFARZ = 3, AKSAMSONSUNNET = 2, YATSISUNNET = 4, YATSIFARZ = 4, YATSISONSUNNET = 2, VITR = 3, NAMAZFULL=40
+            NAMAZYOK = 0, SABAHSUNNET = 2, SABAHFARZ = 2, OGLESUNNET = 4, OGLEFARZ = 4, OGLESONSUNNET = 2, IKINDISUNNET = 4, IKINDIFARZ = 4,
+            AKSAMFARZ = 3, AKSAMSONSUNNET = 2, YATSISUNNET = 4, YATSIFARZ = 4, YATSISONSUNNET = 2, VITR = 3, FARZFULL = 17, NAMAZFULL=40
         }
         static string connString = @"Server =.; Database = NAMAZBORCU; Trusted_Connection = True; TrustServerCertificate=True;";
         
@@ -80,6 +80,20 @@ namespace NamazBorcu.Service
             {
                 string query = @"UPDATE NAMAZ SET "+v1+"="+v3+" WHERE TARIH='" + v2 + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        internal static void AddNamaz(string v1)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = @"FARZGIR";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@REKAT", Int32.Parse(v1)));
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

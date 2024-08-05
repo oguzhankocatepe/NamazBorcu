@@ -61,11 +61,11 @@ namespace NamazBorcu
                 }
                 row.Cells.Add(cell);
             }
-            CalendarPanel.Controls.Add(new LiteralControl("KılınanFarz : " + (Namazlar.Sum(x => x.FarzToplam) + Namazlar.Sum(x => x.VitrToplam))));
-            CalendarPanel.Controls.Add(new LiteralControl("KılınanSünnet : " + (Namazlar.Sum(x => x.SünnetToplam) + Namazlar.Sum(x => x.SonSünnetToplam))));
-            CalendarPanel.Controls.Add(new LiteralControl("KılınanToplam : " + Namazlar.Sum(x => x.GenelToplam)));
-            CalendarPanel.Controls.Add(new LiteralControl("Kılınması Gereken : " + Namazlar.Count * (int)NamazService.REKAT.NAMAZFULL));
-            CalendarPanel.Controls.Add(new LiteralControl("Namaz Borcu : " + (Namazlar.Count * (int)NamazService.REKAT.NAMAZFULL - Namazlar.Sum(x => x.GenelToplam))));
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanFarz : " + (Namazlar.Sum(x => x.FarzToplam) + Namazlar.Sum(x => x.VitrToplam)) + "&nbsp"));
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanSünnet : " + (Namazlar.Sum(x => x.SünnetToplam) + Namazlar.Sum(x => x.SonSünnetToplam)) + "&nbsp"));
+            CalendarPanel.Controls.Add(new LiteralControl("KılınanToplam : <font color=green> " + Namazlar.Sum(x => x.GenelToplam) + " </font> &nbsp"));
+            CalendarPanel.Controls.Add(new LiteralControl("Kılınması Gereken : <font color=brown >" + Namazlar.Count * (int)NamazService.REKAT.FARZFULL + "(" + Namazlar.Count+ " Gün) </font> &nbsp"));
+            CalendarPanel.Controls.Add(new LiteralControl("Namaz Borcu : <font color=red> <b><u>" + (Namazlar.Count * (int)NamazService.REKAT.FARZFULL - Namazlar.Sum(x => x.GenelToplam)) + " </b></u></font> &nbsp"));
         }
 
         private void Calendar_SelectionChanged(object sender, EventArgs e)
@@ -84,10 +84,21 @@ namespace NamazBorcu
                 if (namaz.GenelToplam == (int)NamazService.REKAT.NAMAZYOK)
                     e.Cell.BackColor = Color.Red;
                 else if (namaz.GenelToplam == (int)NamazService.REKAT.NAMAZFULL)
+                    e.Cell.BackColor = Color.DarkGreen;
+                else if (namaz.FarzToplam == (int)NamazService.REKAT.FARZFULL && namaz.GenelToplam > (int)NamazService.REKAT.FARZFULL)
                     e.Cell.BackColor = Color.Green;
+                else if (namaz.FarzToplam == (int)NamazService.REKAT.FARZFULL)
+                    e.Cell.BackColor = Color.LightGreen;
                 else
                     e.Cell.BackColor = Color.Yellow;
             }
+        }
+
+        protected void AddFarzNamaz(object sender, EventArgs e)
+        {
+            NamazService.AddNamaz(addTextBox.Text);
+            Response.Write("<script>alert('" + addTextBox.Text + " rekat nafile namaz kaza olarak eklenmiştir." + "')</script>");
+            addTextBox.Text = "";
         }
     }
 }
